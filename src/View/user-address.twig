@@ -1,0 +1,40 @@
+{% extends "master.twig" %}
+
+{% block conteudo %}
+    {{ parent() }}
+    <section class="content-user flex flex-column">
+        {{ include('componentes/menu_user.twig') }}
+        <div class="pedidos-content endereco-content flex">
+            {% for endereco in enderecos %} 
+                <div class="user-endereco">
+                    <div class="usr-endereco-info-box">
+                        <div class="usr-endereco-header flex">
+                            <h3>Endereço</h3>
+                            <a href="/user-address/{{endereco.id_endereco}}"><span>editar</span></a>
+                            <span>excluir</span>                            
+                        </div>
+                        <div class="usr-endereco-info">
+                            <h3>{{endereco.nome}}</h3>
+                            <p>{{endereco.logradouro}}</p>
+                            <p>{{endereco.referencia}}</p>
+                            <span>{{endereco.bairro}} - {{endereco.cidade}}, {{endereco.uf}}</span>
+                            <p>CEP: {{endereco.cep}}</p>
+                        </div>
+                    </div>
+                    <div class="usr-endereco-main flex flex-center-center">
+                        <input type="radio" name="" value="">
+                        <label>Selecionar como principal</label>
+                    </div>
+                </div>
+            {% endfor %}
+            <a href="/user-address/novo" class="flex flex-column flex-center-center user-endereco-add">
+                <h3>Novo endereço</h3>
+                <h1>+</h1>
+            </a>
+        </div>
+
+    {% endblock %}
+
+    {% block rodape %}
+        {{ parent() }}
+    {% endblock %}

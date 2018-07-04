@@ -1,0 +1,72 @@
+
+{% block conteudo %}
+            {% for pedido in pedidos %}                
+                <div class="pedido-item">    
+                            {% if pedido.status == 0%}
+                                    <div class="pedido-header flex flex-space-between-center">
+                                <span class="flex">Pedido: <h3>&nbsp{{pedido.id_pedido}}</h3></span>
+                                <span class="flex">Valor total: <h3>&nbspR$ {{pedido.total}}</h3></span>
+                                <a id="mover-preparo">
+                                    <i class="fas fa-utensils"></i>
+                                    <input id="id_compra" type="hidden" name="id_compra" value="{{pedido.id_compra}}">
+                                </a>                            
+                            </div>
+                            {% elseif pedido.status == 1%}
+                                <div class="pedido-header flex flex-space-between-center">
+                            <span class="flex">Pedido: <h3>&nbsp{{pedido.id_pedido}}</h3></span>
+                            <span class="flex">Valor total: <h3>&nbspR$ {{pedido.total}}</h3></span>
+                            <a id="mover-entrega">
+                                <i class="fas fa-truck"></i>
+                                <input id="id_compra" type="hidden" name="id_compra" value="{{pedido.id_compra}}">
+                            </a>                            
+                        </div>
+                            {% elseif pedido.status == 2%}
+                                <a id="mover-fim">
+                                    <i class="fas fa-check"></i>
+                                    <input id="id_compra" type="hidden" name="id_compra" value="{{pedido.id_compra}}">
+                                </a> 
+                            {% endif%}    
+                            {% for produtos in pedido %} 
+                                {% for produto in produtos %} 
+                                    <div class="pedido-produto flex flex-align-center">
+                                        <div class="img-prod-content flex flex-center-center">
+                                            <img src="/img/hamburger.jpg">
+                                        </div>
+                                        <span>{{produto.nome}}</span>
+                                    </div>
+                                {% endfor %} 
+                            {% endfor %}                   
+                    <div class="status" id="id1">
+                        <div class="info flex flex-space-between">
+                            <div class="pagamento flex flex-column">
+                                <h3 class="info-title">Pagamento Boleto</h3>
+                                <span>{{pedido.total}}</span>
+                            </div>
+                            <div class="total">
+                                <h3 class="info-title">Total Pago</h3>
+                                <div class="info-precos flex flex-space-between">
+                                    <p>Subtotal</p><span>&nbsp{{pedido.total}}</span>
+                                </div>
+                                <div class="info-precos flex flex-space-between">
+                                    <p>Desconto</p><span>&nbspR$ 0,00</span>
+                                </div>
+                                <div class="info-precos flex flex-space-between">
+                                    <p>Frete</p><span>&nbspR$ 20,02</span>
+                                </div>
+                                <div class="info-precos info-precos-last flex flex-space-between">
+                                    <p>Total</p><span>&nbsp{{pedido.total}}</span>
+                                </div>
+                            </div>
+                            <div class="endereco">
+                                <h3 class="info-title">Endereço</h3>
+                                <h3>Guilherme Ferreira Matos</h3>
+                                <p>Rua Salgado Filho 135</p>
+                                <p>Ao lado da fabrica de biscoitos vo maria.</p>
+                                <span>Bela Vista - Paracatu, MG</span>
+                                <p>CEP: 38600000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>        
+            {% endfor %}
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "master.twig" %}
+
+{% block conteudo %}
+    {{ parent() }}
+    
+    <section class="flex flex-column">
+      <div class="loja-header-info flex flex-column flex-space-between">
+          <div class="flex flex-center-center">
+            <div class="loja-img-box">
+                <img class="loja-img" src="/img/loja.png" alt="">
+            </div>
+            <div class="loja-info flex flex-column flex-justify-center">
+              <h1 class="page-title">{{ produtos[0].nome_loja }}</h1>
+              <span>2.15 km • 40 min</span>
+              <span>Açaí cremoso e sem cristais de gelo!</span>
+            </div>
+          </div>
+          <div class="produtos-line flex">
+              <h3>Produtos</h3>
+          </div>
+    </div>
+    <div class="loja-produtos flex">
+        {% for produto in produtos %}            
+            <div class="produto flex">
+              <div class="loja-img-box flex flex-center-center">
+                      <img class="loja-img" src="/img-banco/{{produto.imagem}}" alt="">
+              </div>
+             <form id="adicionar-carrinho-{{produto.codigo}}" method="POST" action="/adicionar-carrinho" class="produto-info flex-center-center">
+                  <h3>{{produto.nome}}</h3>
+                  <span>{{produto.descricao}}</span>
+                  <h3>{{produto.preco}}</h3>
+                  <input type="hidden" value="{{produto.nome}}" name="nome">
+                  <input type="hidden" value="{{produto.preco}}" name="preco">  
+                  <input type="hidden" value="{{produto.codigo}}" name="codigo">  
+                  <input type="hidden" value="{{produto.imagem}}" name="imagem">  
+                  <input type="hidden" value="{{produto.cnpj}}" name="id_loja"> 
+                  <input type="hidden" name="quantidade" value="1">
+                  <button form="adicionar-carrinho-{{produto.codigo}}" class="btn btn-add-carrinho flex flex-center-center">Carrinho</button>
+              </form>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+    
+{% endblock %}
+
+{% block rodape %}
+    {{ parent() }}
+{% endblock %}

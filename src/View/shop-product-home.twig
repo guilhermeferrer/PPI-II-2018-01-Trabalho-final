@@ -1,0 +1,37 @@
+{% extends "master.twig" %}
+
+{% block conteudo %}
+    {{ parent() }}
+    <section class="content-user flex flex-column">
+        {{ include('componentes/menu_loja.twig') }}
+        <div class="pedidos-content endereco-content flex flex-space-between">
+            <a href="/shop-products/novo" class="flex flex-column flex-center-center user-product-add">
+                <h3>Novo produto</h3>
+                <h1>+</h1>
+            </a>
+            {% for produto in produtos %} 
+                <div class="user-endereco flex">
+                    <div class="usr-endereco-info-box usr-produto-info-box">
+                        <div class="usr-endereco-header flex">
+                            <h3>Produto</h3>
+                            <a href="/shop-products/{{produto.codigo}}"><span>editar</span></a>
+                            <span>excluir</span>                            
+                        </div>
+                        <div class="usr-endereco-info">
+                            <h3>{{produto.nome}}</h3>
+                            <p>{{produto.descricao}}</p>
+                            <p>Preço - R$ {{produto.preco}}</p>
+                        </div>                        
+                    </div>
+                    <div class="produto-img-box loja-img-box flex flex-center-center">
+                        <img class="loja-img" src="/img-banco/{{produto.imagem}}" alt="">
+                    </div>
+                </div>
+            {% endfor %}            
+        </div>
+
+    {% endblock %}
+
+    {% block rodape %}
+        {{ parent() }}
+    {% endblock %}

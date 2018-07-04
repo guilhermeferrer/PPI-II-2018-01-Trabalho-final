@@ -1,0 +1,61 @@
+{% extends "master.twig"%}
+
+{% block conteudo %}
+
+    {{ parent() }}
+
+    <section class="content">
+    <div class="login-user">
+        <h1>LOGIN</h1>
+        <div class="form-content flex flex-space-between">
+          <form  id="form-login" action="/logar" method="POST">
+              <h3>Já sou cliente</h3>
+              <div class="row-form flex flex-column">
+                  <label>Usuário</label>
+                  <input type="text" name="login">
+              </div>
+              <div class="row-form flex flex-column">
+                  <label>Senha:</label>
+                  <input type="password" name="senha">
+              </div>
+              <button for="form-login" class="btn flex flex-center-center">Login</button>
+              <p id="retorno" class="retorno-login"></p>
+          </form>
+            <form id="form-cadastro-user" method="POST" action="/cadastro-usuario">
+              <h3>Novo cliente</h3>
+              <div class="row-form flex flex-column">
+                  <label>Nome:</label>
+                  <input type="text" name="nome">
+              </div>
+              <div class="row-form flex flex-column">
+                  <label>Email:</label>
+                  <input type="email" name="email">
+              </div>
+              <div class="row-form flex flex-column">
+                  <label>Senha:</label>
+                  <input type="password" name="senha">
+              </div>
+              <div class="row-form flex flex-column">
+                  <label>Confirme a Senha:</label>
+                  <input type="password" name="senha2">
+              </div>
+              <div class="row-form flex flex-column">
+                  <label>CPF:</label>
+                  <input id="cpf" type="text" name="cpf">
+              </div>
+              <div class="row-form flex flex-column">
+                  <label>Telefone:</label>
+                  <input id="telefone" type="text" name="telefone">
+              </div>
+              <div class="row-form flex flex-column">
+                  <label>Celular:</label>
+                  <input id="celular" type="text" name="celular">
+              </div>
+              <button for="form-cadastro-user" class="btn flex flex-center-center">Cadastrar</button>
+              <p id="retorno" class="retorno-cadastro"></p>
+          </form>
+        </div>
+    </div>
+</section>
+    
+{% endblock  %}

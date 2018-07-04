@@ -1,0 +1,24 @@
+{% block conteudo %}
+    <h1 style="font-size: 300%;">Pedidos</h1>
+    {% set ultimo = pedidos|last %}
+    {% for pedido in pedidos %}        
+        <div>
+            <h1>Pedido - {{pedido.id_pedido}}</h1>  
+            <span>Nome do produto: {{pedido.nome}} - Codigo: {{pedido.codigo}}</span>
+            <br>
+            <span>Quantidade: {{pedido.quantidade}}</span>
+            <br>
+            <span>Preço: {{pedido.preco}}</span>
+            <br>
+        </div>
+        {% if pedido == ultimo %}
+            <br>
+            <h4 style="color:red">Total Compra: R${{pedido.total}}</h4>
+        {% endif %}
+        <hr>
+    {% endfor %}
+
+{% endblock %}
+
+{% block rodape %}
+{% endblock %}

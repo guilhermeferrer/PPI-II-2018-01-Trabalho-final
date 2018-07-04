@@ -1,0 +1,46 @@
+{% extends "master.twig" %}
+
+{% block conteudo %}
+    {{ parent() }}
+    <section class="content-user flex flex-column">
+        {{ include('componentes/menu_loja.twig') }}
+        <div class="pedidos-content flex flex-center-flex-start flex-column">
+            <form  class="shop-account flex flex-column flex-align-center" id="form-shop-update" action="/shop-account-update">
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>Nome do Responsável</label> 
+                    <input type="text" name="nome" value="{{loja.nome}}">
+                </div>
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>Email</label>
+                    <input type="email" name="email" value="{{loja.email}}">
+                </div>
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>CNPJ</label>
+                    <input disabled id="cnpj" type="text" name="cnpj" value="{{loja.cnpj}}">
+                </div>
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>Razão Social</label>
+                    <input type="text" name="razao-social" value="{{loja.razao_social}}">
+                </div>
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>Nome Fantasia</label>
+                    <input type="text" name="nome-fantasia" value="{{loja.nome_fantasia}}">
+                </div>
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>Celular</label>
+                    <input id="celular" type="text" name="celular" value="{{loja.celular}}">
+                </div>
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>Telefone</label>
+                    <input id="telefone" type="text" name="telefone" value="{{loja.telefone}}">
+                </div>                
+                <button for="form-shop-update" class="btn flex flex-center-center">Salvas Alterações</button>
+                <p id="retorno" class="retorno-alterar-shop"></p>
+            </form>
+        </div>
+    </section>
+    {% endblock %}
+
+    {% block rodape %}
+        {{ parent() }}
+    {% endblock %}

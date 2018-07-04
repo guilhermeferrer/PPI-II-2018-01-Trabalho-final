@@ -1,0 +1,577 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style:none;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    color:black;
+}
+
+/* VALIDATE COLORS*/
+/* LAYOUT FLEX - CLASSES*/
+.flex{
+    display: flex;
+}
+.flex-justify-center{
+    justify-content: center;
+}
+.flex-justify-end{
+    justify-content: flex-end;
+}
+.flex-align-flex-start{
+    align-items: flex-start;
+}
+.flex-align-flex-end{
+    align-items: flex-end;
+}
+.flex-center-flex-start{
+    align-items: center;
+}
+.flex-align-center{
+    align-items: center;
+}
+.flex-center-center{
+    justify-content: center;
+    align-items: center;
+}
+.flex-space-around-center{
+    justify-content: space-around;
+    align-items: center;
+}
+.flex-space-between-center{
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-column{
+    flex-direction: column;
+}
+.flex-space-around{
+    justify-content: space-around;
+}
+.flex-space-between{
+    justify-content: space-between;
+}
+/*LAYOUT MENU*/
+.navegation{
+    background: #FFFFFF;
+    height: 120px;
+    border-bottom: 1px solid #666;
+    box-shadow: 0 1px 5px rgba(0,0,0,.3);
+}
+.menu{
+    height: 75px;
+}
+.business-area{
+    width: 28%;
+}
+.account{
+    width: 30%;
+}
+.business-area li{
+    font-weight: 600;
+    color: #222222;
+    margin-right: 20px;
+}
+.sub-menu{
+    height: 45px;
+    background: #222222;
+}
+.sub-menu-navegation{
+    width: 50%;
+    margin-left: 4.5%;
+}
+.sub-menu-navegation li{
+    color: white;
+    font-size: 80%;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+.logo-menu{
+    height: 65px;
+}
+.banner{
+    margin-top: 50px;
+    margin-left: 2%;
+    width: 96%;
+    height: 300px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.3);
+    position: relative;
+}
+.banner-img{
+    width: 100%;
+    height: 100%;
+    background: url(../img/banner.jpeg);
+    background-size: cover;
+    background-position: 10% 50%;
+    position: absolute;
+    filter: blur(1px);
+}
+.overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #333;
+    opacity: .6;
+    z-index: 2;
+}
+.formulario-busca{
+    padding: 25px 30px;
+    width: 85%;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 3;
+}
+.formulario-busca h1{
+    font-size: 50px;
+    line-height: 50px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: #333 1px 0 5px;
+    font-family: futura-pt,Arial,sans-serif;
+}
+.formulario-busca form input[type=text]{
+    width: 350px;
+    height: 50px;
+    border-radius: 4px;
+    border: 1px solid #cecece;
+    padding: 15px;
+    font-size: 120%;
+}
+.formulario-busca form .btn{
+    height: 50px;
+    width: 80px;
+    border-radius: 4px;
+    background: #222222;
+    font-size: 120%;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 1px 5px rgba(0,0,0,.3);
+}
+.grupo-formulario{
+    width: 440px;
+}
+
+/*LAYOUT LOGIN*/
+.content{
+    width: 100%;
+    padding: 30px 0;
+    background: #F5F5F5;
+}
+.login-user{
+    width: 76%;
+    margin-left: 12%;
+}
+.login-user h1{
+    margin-bottom: 30px;
+}
+.form-content{
+
+}
+.form-content form{
+    color: #555;
+    background: white;
+    width: 48%;
+    padding: 2%;
+    box-shadow: 1px 1px 1px rgba(34,34,34,.1);
+}
+#form-login{
+    max-height: 300px;
+}
+.form-content form h3{
+    margin-bottom: 18px;
+    font-weight: 400;
+}
+.row-form input{
+    height: 35px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 18px;
+}
+.row-form label{
+    text-transform: uppercase;
+    font-size: 85%;
+}
+.btn{
+    width: 250px;
+    height: 45px;
+    border: none;
+    border-radius: 4px;
+    background-color: #222;
+    color: #fff;
+    font-size: 110%;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+#retorno{
+    margin-top: 15px;
+    color: #d93025 !important;
+}
+.btn:hover{
+    opacity: .9;
+    transition: all .2s ease-in-out;
+}
+/* LAYOYT USER HOME MENU */
+.home-user-menu{
+    width: 90%;
+    margin-left: 5%;
+    padding: 0 5%;
+    height: 80px;
+    border-bottom: 1px solid #b7b7b7;
+}
+.page-title{
+
+}
+.home-menu-nav{
+    height: 40px;
+}
+.title{
+    height: 30px;
+    color: #333;
+    font-size: 150%;
+    border-bottom: 3px solid #222222;
+    cursor: pointer;
+}
+.home-menu-nav nav{
+    width: 20%;
+}
+.home-menu-nav nav li{
+    height: 25px;
+    border-bottom: 3px solid rgba(34, 34, 34, 0);
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+.home-user-menu li:hover{
+    border-bottom: 3px solid rgba(34, 34, 34, 1);
+}
+/* LAYOYT USER HOME */
+.content-user{
+    margin-top: 6px;
+    padding: 30px 0;
+}
+
+.pedidos-content{
+    margin-left: 15%;
+    width: 70%;
+    padding: 30px 0;
+}
+.inner-pedidos{
+    width: 100%;
+}
+.pedido-item{
+    width: 90%;
+    border: 2px solid #999;
+    margin-bottom: 35px;
+    cursor: pointer;
+}
+.pedido-header{
+    height: 50px;
+    width: 50%;
+    padding: 15px;
+}
+.pedido-produto{
+    height: 100px;
+    border-top: 2px solid #999;
+    padding: 15px;
+}
+.img-prod-content{
+    margin-right: 15px;
+    width: 80px;
+    height: 80px;
+}
+.img-prod-content img{
+    width: 100%;
+}
+.status{
+    height:0;
+    visibility: hidden;
+    padding-bottom: 10px;
+}
+.pedido-status{
+    height: 60px;
+}
+.timeline{
+    height: 6px;
+    width: 94%;
+    background: #ddd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.timeline-recebido{
+    height: 100%;
+    width: 10%;
+    background: #E1574C;
+}
+.timeline-preparo{
+    height: 100%;
+    width: 35%;
+    background: #E1574C;
+}
+.timeline-entrega{
+    height: 100%;
+    width: 65%;
+    background: #E1574C;
+}
+.timeline-final{
+    height: 100%;
+    width: 100%;
+    background: #40cd28;
+}
+.delivery-status{
+    width: 90%;
+    color: #828282;
+}
+.info{
+    width: 90%;
+    margin-left: 5%;
+    padding-top: 15px;
+    margin-top: 15px;
+    border-top: 1px solid #ddd;
+}
+.info-title{
+    margin-bottom: 15px;
+}
+.total{
+    width: 30%;
+}
+.info-precos-last{
+    border-top: 1px solid #666;
+    margin-top: 10px;
+}
+.pagamento{
+}
+.info-precos{
+
+}
+.display{
+    display: block;
+}
+
+/* LAYOUT USER CADASTRO */
+#form-cadastro, #form-cadastro-endereco, #form-account-update, #form-shop-update, #form-address-update, #form-add-product, #form-update-product{
+    width: 80%;
+}
+.row-form-cadastro{
+    width: 90%;
+    margin-bottom: 20px;
+}
+.row-form-cadastro input{
+    width: 75%;
+    height: 35px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+}
+.row-form-cadastro label{
+    font-size: 85%;
+    margin-right: 15px;
+}
+
+/* LAYOUT USER ENDERECO */
+.endereco-content{
+    padding-left: 4%;
+    flex-wrap: wrap;
+}
+.user-endereco{
+    align-self: flex-start;
+    width: 45%;
+    border: 1px  solid #ddd;
+    margin-right: 3%;
+    margin-top: 20px;
+}
+.usr-endereco-header{
+    margin-bottom: 10px;
+}
+.usr-endereco-info-box{
+    padding: 15px;
+}
+.usr-endereco-main{
+    border-top: 1px  solid #ddd;
+    margin: 10px 0;
+}
+.user-endereco-add{
+    width: 45%;
+    min-height: 180px;
+    margin-top: 20px;
+    border: 5px dashed #ddd;
+    margin-right: 3%;
+}
+
+/* LAYOUT LOJAS */
+.lojas{
+    width: 80%;
+    margin-left: 10%;
+    padding: 20px 40px;
+
+    flex-wrap: wrap;
+}
+.loja{
+    width: 45%;
+    padding: 5px 15px;
+    margin: 15px 0;
+    margin-left: 3.3%;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0,0,0,.3);
+}
+.loja-img-box{
+    width: 125px;
+    height: 125px;
+    margin-right: 20px;
+}
+.loja-img{
+    width: 100%;
+}
+
+/* LAYOUT LOJA PRODUTOS */
+.loja-produtos{
+    width: 90%;
+    margin-left: 5%;
+    padding: 20px 40px;
+    flex-wrap: wrap;
+}
+.loja-header-info{
+    width: 90%;
+    margin-left: 5%;
+    border-bottom: 1px solid #b7b7b7;
+    padding: 0 5%;
+}
+.produtos-line h3{
+    font-size: 150%;
+    color: #333;
+    border-bottom: 3px solid #222222;
+}
+.produto{
+    width: 45%;
+    margin: 10px 0;
+    margin-left: 3%;
+    padding-top: 10px;
+    border: 1px solid #ddd;
+}
+.btn-add-carrinho{
+    width: 150px;
+}
+
+/* LAYOUT LOJA PRODUTOS */
+.carrinho{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 20px;
+}
+.produto-carrinho-header{
+    width: 100%;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #b7b7b7;
+}
+.produto-carrinho-header span:first-child{
+    width: 60%;
+}
+.produto-carrinho-header span{
+    width: 20%;
+}
+.produto-carrinho{
+    border-bottom: 1px solid #b7b7b7;
+    padding: 20px 0;
+}
+.carrinho-header-info{
+    margin-top: 20px;
+}
+.carrinho-produto {
+    width: 60%;
+}
+.qtd, .preco{
+    width: 20%;
+}
+.qtd select{
+    height: 40px;
+    width: 40px;
+    text-align: center;
+}
+.overview{
+    width: 100%;
+    padding: 10px 0;
+}
+.carrinho-img-box{
+    width: 125px;
+    height: 75px;
+}
+.carrinho-img{
+    width: 100%;
+}
+.subtotal, .frete, .total{
+    width: 25%;
+}
+.btn-fechar-carrinho{
+    width: 160px;
+    margin-left: 20px;
+}
+#link-cadastrar{
+    margin-top: 15px;
+}
+#link-cadastrar a{
+    text-decoration: underline;
+}
+#nav-shop{
+    width: 30%;
+}
+.user-product-add{
+    width: 45%;
+    min-height: 100px;
+    margin-top: 20px;
+    border: 5px dashed #ddd;
+    margin-right: 3%;
+}
+.produto-img-box{
+    align-self: flex-end;
+}
+.usr-produto-info-box{
+    width: 60%;
+}
+.input-file{
+    margin-bottom: 15px;
+}
+.menu-icons{
+    width: 80%;
+    font-size: 300%; 
+    margin-bottom: 20px;
+}
+.menu-icons a{
+    cursor: pointer;
+}
+.menu-icons i {
+    color: #666;
+}
+.not-found-box{
+    align-self: center;
+    width: 60%;
+    padding: 20px 80px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.not-found-box img{
+    width: 150px;
+}
+.not-found-box h1{
+    color: #545454;
+}
+.pedido-header{
+    width: 100%;
+}
+.pedido-header a{
+    width: 30%;
+    text-align: end;
+}
+.pedido-header a i{
+    color:#666666;
+    font-size: 180%;
+}
+footer{
+    width: 100%;
+    height: 80px;
+    background: #222222;
+    margin-top: 20px;
+}
+.controle-altura{
+    min-height: 420px;
+}

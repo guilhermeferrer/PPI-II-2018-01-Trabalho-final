@@ -1,0 +1,27 @@
+{% extends "master.twig" %}
+
+{% block conteudo %}
+    {{ parent() }}   
+    <div class="controle-altura">
+        <section class=" lojas flex flex-justify-center">
+            {% if status is defined%}
+                {{ include('not-found-box.twig') }}
+            {% endif %}     
+            {% for loja in lojas %}
+                <a href="/loja/{{loja.tag}}" class="loja flex flex-align-center">
+                    <div class="loja-img-box">
+                        <img class="loja-img" src="img/loja.png" alt="">
+                    </div>
+                    <div class="loja-info">
+                        <h3>{{loja.nome}}</h3>
+                        <span>30-45min</span>
+                    </div>
+                </a>    
+            {% endfor %}
+        </section>
+    </div>
+{% endblock %}
+
+{% block rodape %}
+    {{ parent() }}
+{% endblock %}

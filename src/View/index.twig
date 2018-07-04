@@ -1,0 +1,25 @@
+{% extends "master.twig" %}
+
+{% block conteudo %}
+    {{ parent() }}
+    <div class="controle-altura">
+    <section class=" banner flex flex-center-center">
+    <div class="banner-img"></div>
+    <div class="overlay"></div>
+    <div class="formulario-busca flex flex-space-between-center">
+        <h1>RECEBA SEU PEDIDO<br> NO ACONCHEGO DE <br>SUA CASA!</h1>
+        <form id="form-search" method="POST" action="/lojas">
+            <div class="grupo-formulario flex flex-space-between">
+              <input id="cep" type="text" name="cep" placeholder="Cep">
+              <button  form="form-search" id="form-search-btn" class="btn flex flex-center-center">Buscar</button >
+            </div>
+        </form>
+    </div>
+    </section>
+    </div>
+
+{% endblock %}
+
+{% block rodape %}
+    {{ parent() }}
+{% endblock %}

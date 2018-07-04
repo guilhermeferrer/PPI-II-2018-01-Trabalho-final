@@ -1,0 +1,46 @@
+{% extends "master.twig" %}
+
+{% block conteudo %}
+    {{ parent() }}
+    <section class="content-user flex flex-column">
+        {{ include('componentes/menu_user.twig') }}
+        <div class="pedidos-content flex flex-center-flex-start flex-column">
+            <form  class="user-account flex flex-column flex-align-center" id="form-account-update" action="/user-account-update" method="POST">
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>Nome Completo</label>
+                    <input type="text" name="nome" value="{{cadastro.nome}}">
+                </div>
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>E-mail/Login</label>
+                    <input type="text" name="email" value="{{cadastro.email}}">
+                </div>
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>CPF*</label>
+                    <input disabled type="text" name="cpf" value="{{cadastro.cpf}}">
+                </div>
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>Apelido*</label>
+                    <input type="text" name="apelido">
+                </div>
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>Data de nascimento</label>
+                    <input type="text" name="data-nascimento">
+                </div>
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>Telefone*</label>
+                    <input type="text" name="telefone" value="{{cadastro.telefone}}">
+                </div>
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>Celular</label>
+                    <input type="text" name="celular" value="{{cadastro.celular}}">
+                </div>
+                <button for="form-account-update" class="btn flex flex-center-center">Salvas Alterações</button>
+                <p id="retorno" class="retorno-alterar-cadastro"></p>
+            </form>
+        </div>
+    </section>
+    {% endblock %}
+
+    {% block rodape %}
+        {{ parent() }}
+    {% endblock %}

@@ -1,0 +1,36 @@
+{% extends "master.twig" %}
+
+{% block conteudo %}
+    {{ parent() }}
+    <section class="content-user flex flex-column">
+        {{ include('componentes/menu_loja.twig') }}
+        <div class="pedidos-content flex flex-center-flex-start flex-column">
+            <form  class="shop-account flex flex-column flex-align-center" id="form-update-product" action="/shop-add-product" method="POST" enctype="multipart/form-data">
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>Nome</label> 
+                    <input type="text" name="nome" value="{{produto.nome}}">
+                </div>
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>Codigo</label> 
+                    <input disabled type="text" name="codigo" value="{{produto.codigo}}">
+                    <input type="hidden" name="codigo" value="{{produto.codigo}}">
+                </div>
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>Descrição</label>
+                    <input type="text" name="descricao" value="{{produto.descricao}}">
+                </div>
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>Preço</label>
+                    <input  id="cnpj" type="text" name="preco" value="{{produto.preco}}">
+                </div>
+                <input class="input-file" type="file" name="imagem">
+                <button for="form-update-product" class="btn flex flex-center-center">Salvar</button>
+                <p id="retorno" class="retorno-update-product"></p>
+            </form>
+        </div>
+    </section>
+    {% endblock %}
+
+    {% block rodape %}
+        {{ parent() }}
+    {% endblock %}

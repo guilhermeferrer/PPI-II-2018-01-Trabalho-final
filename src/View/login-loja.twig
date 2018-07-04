@@ -1,0 +1,28 @@
+{% extends "master.twig"%}
+
+{% block conteudo %}
+    {{ parent() }}
+
+    <section class="content">
+        <div class="login-user flex flex-column flex-justify-center">
+            <h1 style="text-align: center">LOGIN LOJA</h1>
+            <div class="form-content flex flex-justify-center">
+                <form  id="form-login-loja" method="POST">
+                    <h3>Já sou cliente</h3>
+                    <div class="row-form flex flex-column">
+                        <label>Usuario</label>
+                        <input id="cnpj" type="text" name="login">
+                    </div>
+                    <div class="row-form flex flex-column">
+                        <label>Senha:</label>
+                        <input type="password" name="senha">
+                    </div>
+                    <button for="form-login-loja" class="btn flex flex-center-center">Login</button>
+                    <p id="link-cadastrar"><a href="/cadastrar-loja">Cadastrar loja</a></p>
+                    <p id="retorno" class="retorno-login"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+{% endblock  %}

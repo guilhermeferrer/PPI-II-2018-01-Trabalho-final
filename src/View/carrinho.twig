@@ -1,0 +1,68 @@
+{% extends "master.twig" %}
+
+{% block conteudo %}
+    {{ parent() }}
+
+    <section class="controle-altura flex flex-column">
+        {% if status is defined%}
+            {{ include('not-found-box.twig') }}
+        {% else %} 
+        <div class="carrinho-header-info loja-header-info flex flex-column flex-space-between">
+            <div class="produtos-line flex">
+                <h3>Carrinho</h3>
+            </div>
+        </div>
+        <div class="carrinho flex flex-column">
+            <div class="produto-carrinho-header flex">
+                <span>Produto</span>
+                <span>Qtd</span>
+                <span>Preco</span>
+            </div>
+            {% set ultimo = "" %}
+            {% for compra in carrinho %}            
+                {% for produto in compra.produtos %}
+                    {% set ultimo = compra.total %}                 
+
+                    <div class="produto-carrinho flex flex-align-center">
+                        <div class="carrinho-produto flex flex-align-center">
+                            <div class="carrinho-img-box">
+                                <img class="carrinho-img" src="/img-banco/{{produto.imagens}}" alt="">
+                            </div>
+                            <div class="">
+                                <h3>{{produto.nome}}</h3>
+                            </div>
+                        </div>
+                        <div class="qtd">
+                            <input type="hidden" id="codigo" value="{{produto.codigo}}">
+                            <select id="selecty">
+                                {% for i in range(1, 6) %}
+                                    {% if produto.quantidade == i %}
+                                        <option selected value="{{i}}">{{i}}</option>
+                                    {% else %}
+                                        <option value="{{i}}">{{i}}</option>
+                                    {% endif %}  
+                                {% endfor %}                                
+                            </select>
+                        </div>
+                        <h3 class="preco">{{produto.preco}}</h3>
+                    </div> 
+                {% endfor %}
+            {% endfor %}
+            <div class="overview flex flex-align-center">
+                <span class="subtotal">Subtotal: R$ {{ultimo}}</span>
+                <span class="frete">Frete: R$ 5,00</span>
+                <span class="total">Total: R$ {{ultimo}}</span>
+                <button id="finalizar-compra" class="btn btn-fechar-carrinho flex flex-center-center">Fechar Compra</button>
+                <button id="limpar-carrinho" class="btn btn-fechar-carrinho">Limpar Carrinho</button>
+            </div>
+        </div>
+        <div>
+            <div id="result"></div>
+        </div>
+        {% endif %}        
+    </section>
+{% endblock %}
+
+
+
+

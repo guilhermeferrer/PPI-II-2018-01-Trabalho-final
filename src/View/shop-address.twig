@@ -1,0 +1,47 @@
+{% extends "master.twig" %}
+
+{% block conteudo %}
+    {{ parent() }}
+    <section class="content-user flex flex-column">
+        {{ include('componentes/menu_loja.twig') }}
+        <div class="pedidos-content flex flex-center-flex-start flex-column">
+            <form  class="user-account flex flex-column flex-align-center" id="form-address-update" action="/user-address-update" method="POST">
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>CEP</label>
+                    <input id="cep" type="text" name="cep" value="{{endereco.cep}}">
+                </div>
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>Logradouro</label>
+                    <input type="text" name="logradouro" value="{{endereco.logradouro}}">
+                </div>
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>Número</label>
+                    <input id="numero" type="text" name="numero" value="{{endereco.numero}}">
+                    <input type="hidden" value="{{endereco.id_endereco}}" name="id_endereco">
+                </div>
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>Complemento</label>
+                    <input type="text" name="complemento" value="{{endereco.complemento}}">
+                </div>
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>Bairro</label>
+                    <input type="text" name="bairro" value="{{endereco.bairro}}">
+                </div>
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>Cidade</label>
+                    <input type="text" name="cidade" value="{{endereco.cidade}}">
+                </div>
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>UF</label>
+                    <input id="uf" type="text" name="uf" value="{{endereco.uf}}">
+                </div>
+                <button for="form-address-update" class="btn flex flex-center-center">Salvas Alterações</button>
+                <p id="retorno" class="retorno-alterar-endereco"></p>
+            </form>
+        </div>
+    </section>
+    {% endblock %}
+
+    {% block rodape %}
+        {{ parent() }}
+    {% endblock %}

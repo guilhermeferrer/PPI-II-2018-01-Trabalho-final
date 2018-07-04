@@ -1,0 +1,52 @@
+{% extends "master.twig" %}
+
+{% block conteudo %}
+    {{ parent() }}
+    <section class="content-user flex flex-column">
+        {{ include('componentes/menu_user.twig') }}
+        <div class="pedidos-content flex flex-center-flex-start flex-column">
+            <form  class="form-alterar-endereco flex flex-column flex-align-center" id="form-cadastro-endereco" action="/acao-alterar-endereco" method="POST">
+                <input type="hidden" name="id_endereco" value="{{endereco.id_endereco}}">
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>Nome do destinatário*</label>
+                    <input type="text" name="nome" value="{{endereco.nome}}">
+                </div>
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>CEP*</label>
+                    <input type="text" name="cep" value="{{endereco.cep}}">
+                </div>
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>Endereço*</label>
+                    <input type="text" name="logradouro" value="{{endereco.logradouro}}">
+                </div>
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>Número*</label>
+                    <input type="text" name="numero" value="{{endereco.numero}}">
+                </div>
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>Complemento</label>
+                    <input type="text" name="complemento" value="{{endereco.complemento}}">
+                </div>
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>Referência*</label>
+                    <input type="text" name="referencia" value="{{endereco.referencia}}">
+                </div>
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>Bairro</label>
+                    <input type="text" name="bairro" value="{{endereco.bairro}}">
+                </div>
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>Cidade*</label>
+                    <input type="text" name="cidade" value="{{endereco.cidade}}">
+                </div>
+                <div class="row-form-cadastro flex flex-align-center flex-justify-end">
+                    <label>Estado*</label>
+                    <input type="text" name="uf" value="{{endereco.uf}}">
+                </div>
+                <button for="form-cadastro-endereco" class="btn flex flex-center-center">Salvar Alterações</button>
+                <p id="retorno" class="retorno-alterar-endereco"></p>
+            </form>
+        </div>
+    </section>
+
+{% endblock  %}

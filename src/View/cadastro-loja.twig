@@ -1,0 +1,86 @@
+{% extends "master.twig"%}
+
+{% block conteudo %}
+    {{ parent() }}
+</div>
+<section class="content">
+    <div class="login-user flex flex-column flex-justify-center">
+        <h1 style="text-align: center">CADASTRO LOJA</h1>
+        <div class="form-content flex flex-justify-center">
+            <form  id="form-cadastrar-loja" method="POST" action="/acao-cadastrar-loja">
+                <div class="row-form flex flex-column">
+                    <label>Nome do Responsável</label> 
+                    <input type="text" name="nome">
+                </div>
+                <div class="row-form flex flex-column">
+                    <label>Email</label>
+                    <input type="email" name="email">
+                </div>
+                <div class="row-form flex flex-column">
+                    <label>Senha</label> 
+                    <input type="password" name="senha">
+                </div>
+                <div class="row-form flex flex-column">
+                    <label>Confirmar Senha</label> 
+                    <input type="password" name="senha2">
+                </div>
+                <h1>Dados do estabelecimento</h1>
+                <hr>
+                <div class="row-form flex flex-column">
+                    <label>CNPJ</label>
+                    <input id="cnpj" type="text" name="cnpj">
+                </div>
+                <div class="row-form flex flex-column">
+                    <label>Razão Social</label>
+                    <input type="text" name="razao-social">
+                </div>
+                <div class="row-form flex flex-column">
+                    <label>Nome Fantasia</label>
+                    <input type="text" name="nome-fantasia">
+                </div>
+                <div class="row-form flex flex-column">
+                    <label>Celular</label>
+                    <input id="celular" type="text" name="celular">
+                </div>
+                <div class="row-form flex flex-column">
+                    <label>Telefone</label>
+                    <input id="telefone" type="text" name="telefone">
+                </div>
+                <h1>Endereço</h1>
+                <hr>
+                <div class="row-form flex flex-column">
+                    <label>CEP</label>
+                    <input id="cep" type="text" name="cep">
+                </div>
+                <div class="row-form flex flex-column">
+                    <label>Logradouro</label>
+                    <input type="text" name="logradouro">
+                </div>
+                <div class="row-form flex flex-column">
+                    <label>Número</label>
+                    <input id="numero" type="text" name="numero">
+                </div>
+                <div class="row-form flex flex-column">
+                    <label>Complemento</label>
+                    <input type="text" name="complemento">
+                </div>
+                <div class="row-form flex flex-column">
+                    <label>Bairro</label>
+                    <input type="text" name="bairro">
+                </div>
+                <div class="row-form flex flex-column">
+                    <label>Cidade</label>
+                    <input type="text" name="cidade">
+                </div>
+                <div class="row-form flex flex-column">
+                    <label>UF</label>
+                    <input id="uf" type="text" name="uf">
+                </div>
+                <button for="form-cadastrar-loja" class="btn flex flex-center-center">Cadastrar</button>
+                <p id="retorno" class="retorno-cadastro"></p>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock  %}

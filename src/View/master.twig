@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block titulo %}Pedido Anotado{% endblock %}</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="/img/logo-icon.png" sizes="16x16">
+        <link rel="stylesheet" type="text/css" href="/css/estilo.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    </head>
+    <body>            
+        {% block conteudo %}
+            {{ include('componentes/menu.twig') }}
+
+
+        {% endblock %}
+        
+        {% block rodape %}
+            {{ include('componentes/footer.twig') }}
+            <script src="/js/jquery-3.3.1.min.js" type="text/javascript" ></script>
+            <script src="/js/funcoes.js" type="text/javascript" ></script>
+            <script src="/js/jquery.mask.min.js" type="text/javascript" ></script>
+            <script src="/js/additional-methods.js" type="text/javascript" ></script>
+            <script src="/js/jquery.validate.min.js" type="text/javascript" ></script>
+            <script src="/js/messages_pt_BR.js" type="text/javascript" ></script>
+        {% endblock %}
+    </body>
+</html>
